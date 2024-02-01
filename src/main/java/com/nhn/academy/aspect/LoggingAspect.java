@@ -10,7 +10,7 @@ import org.springframework.util.StopWatch;
 
 @Aspect
 @Slf4j
-public class CommonAspect {
+public class LoggingAspect {
     @Value("${name}")
     private String name;
     @Value("${message}")

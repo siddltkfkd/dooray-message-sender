@@ -2,15 +2,13 @@ package com.nhn.academy.service;
 
 import com.nhn.academy.Sender.MessageSender;
 import com.nhn.academy.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MessageSendService {
+    @Autowired
     private MessageSender messageSender;
 
     public MessageSendService() {
-    }
-
-    public void setMessageSender(MessageSender messageSender) {
-        this.messageSender = messageSender;
     }
 
     public void sendMessage(User user, String message){

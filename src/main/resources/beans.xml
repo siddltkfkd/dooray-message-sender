@@ -5,8 +5,15 @@
 
 
     <bean id="doorayMessageSender" class="com.nhn.academy.Sender.DoorayMessageSender">
-        <property name="url" value="https://hook.dooray.com/services/3204376758577275363/3727911831849652136/t0TgHWJ1S9SWgyLnHKk53Q"/>
+        <constructor-arg ref="doorayHookSender"/>
     </bean>
+
+    <bean id="doorayHookSender" class="com.nhn.dooray.client.DoorayHookSender">
+        <constructor-arg ref="restTemplate" />
+        <constructor-arg type="java.lang.String" value="https://hook.dooray.com/services/3204376758577275363/3727911831849652136/t0TgHWJ1S9SWgyLnHKk53Q"/>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
 
     <bean id="messageSendService" class="com.nhn.academy.service.MessageSendService">
         <property name="messageSender" ref="doorayMessageSender"/>

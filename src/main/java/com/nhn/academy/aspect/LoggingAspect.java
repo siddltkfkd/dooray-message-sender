@@ -6,9 +6,11 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
 @Aspect
+@Component
 @Slf4j
 public class LoggingAspect {
     @Value("${name}")

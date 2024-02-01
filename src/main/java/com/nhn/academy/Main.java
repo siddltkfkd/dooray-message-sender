@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
             MessageSendService service = context.getBean("messageSendService", MessageSendService.class);
-            service.sendMessage(new User("이은지"), "메세지");
+            service.sendMessage(new User("이름"), "메세지");
         }
     }
 }

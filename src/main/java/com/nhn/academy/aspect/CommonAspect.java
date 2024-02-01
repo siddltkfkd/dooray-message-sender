@@ -1,6 +1,7 @@
 package com.nhn.academy.aspect;
 
 import com.nhn.academy.domain.User;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StopWatch;
 
 @Aspect
+@Slf4j
 public class CommonAspect {
     @Value("${name}")
     private String name;
@@ -22,7 +24,7 @@ public class CommonAspect {
             return pjp.proceed(new Object[] {user, this.message});
         } finally {
             stopWatch.stop();
-            System.out.println(pjp.getTarget().getClass().getSimpleName() + "." + pjp.getSignature().getName() + " " + stopWatch.getTotalTimeMillis() + " ms");
+            log.info(pjp.getTarget().getClass().getSimpleName() + "." + pjp.getSignature().getName() + " " + stopWatch.getTotalTimeMillis() + " ms");
         }
     }
 }

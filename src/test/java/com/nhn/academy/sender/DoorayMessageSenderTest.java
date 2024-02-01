@@ -1,4 +1,4 @@
-package com.nhn.academy;
+package com.nhn.academy.sender;
 
 import com.nhn.academy.Sender.DoorayMessageSender;
 import com.nhn.academy.domain.User;

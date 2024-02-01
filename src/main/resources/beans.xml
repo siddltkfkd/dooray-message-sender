@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="doorayMessageSender" class="com.nhn.academy.Sender.DoorayMessageSender">
+        <property name="url" value="https://hook.dooray.com/services/3204376758577275363/3727911831849652136/t0TgHWJ1S9SWgyLnHKk53Q"/>
+    </bean>
+
+    <bean id="messageSendService" class="com.nhn.academy.service.MessageSendService">
+        <property name="messageSender" ref="doorayMessageSender"/>
+    </bean>
+
+</beans>

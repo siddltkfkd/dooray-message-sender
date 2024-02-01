@@ -8,6 +8,9 @@ import org.springframework.web.client.RestTemplate;
 public class DoorayMessageSender implements MessageSender{
     private String url;
 
+    public DoorayMessageSender() {
+    }
+
     @Override
     public boolean sendMessage(User user, String message) {
         new DoorayHookSender(new RestTemplate(), url)

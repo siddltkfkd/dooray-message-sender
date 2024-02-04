@@ -24,7 +24,7 @@ public class CommonAspect {
             return pjp.proceed(new Object[] {user, this.message});
         } finally {
             stopWatch.stop();
-            log.info(pjp.getTarget().getClass().getSimpleName() + "." + pjp.getSignature().getName() + " " + stopWatch.getTotalTimeMillis() + " ms");
+            log.info("[{}].[{}] [{}]ms", pjp.getTarget().getClass().getSimpleName(), pjp.getSignature().getName(), stopWatch.getTotalTimeMillis());
         }
     }
 }
